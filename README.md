@@ -1,4 +1,4 @@
-# Project Management Tool
+<# Project Management Tool
 
 <p align="center">
 
@@ -16,7 +16,10 @@ This project is an implementation of a Design i found on [Dibble.com](https://dr
 
 
 <img src="https://raw.githubusercontent.com/RegNex/ProjectMgtTool_Flutter_Desktop/master/screenshot/art_1.png" width="50%"  height="50%"/>
+<p>Light Theme</p>
+<br>
 <img src="https://raw.githubusercontent.com/RegNex/ProjectMgtTool_Flutter_Desktop/master/screenshot/art_2.png" width="50%"  height="50%"/>
+<p>Dark Theme</p>
 
 ## Getting Started
 
