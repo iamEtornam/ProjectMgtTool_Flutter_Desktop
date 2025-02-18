@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:projectmgtapp/color_extension.dart';
 
 /// light theme
 ThemeData customLightTheme(
@@ -9,8 +10,6 @@ ThemeData customLightTheme(
   return ThemeData(
       scaffoldBackgroundColor: Color.fromRGBO(242, 247, 252, 1),
       visualDensity: VisualDensity.adaptivePlatformDensity,
-      cursorColor: Color.fromRGBO(80, 125, 247, 1),
-      errorColor: Color.fromRGBO(80, 125, 247, 1),
       platform: defaultTargetPlatform,
       primaryColor: Colors.white,
       floatingActionButtonTheme: FloatingActionButtonThemeData(
@@ -23,7 +22,7 @@ ThemeData customLightTheme(
         fillColor: Color.fromRGBO(235, 242, 248, 1),
         filled: true,
         alignLabelWithHint: true,
-        hintStyle: Theme.of(context).textTheme.bodyText1,
+        hintStyle: Theme.of(context).textTheme.bodyLarge,
         contentPadding: EdgeInsets.all(15.0),
         floatingLabelBehavior: FloatingLabelBehavior.auto,
         focusedBorder: OutlineInputBorder(
@@ -42,10 +41,10 @@ ThemeData customLightTheme(
         focusedErrorBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Color.fromRGBO(80, 125, 247, 1)),
             borderRadius: BorderRadius.all(Radius.circular(10))),
-        labelStyle: Theme.of(context).textTheme.bodyText2,
+        labelStyle: Theme.of(context).textTheme.bodyMedium,
         errorStyle: Theme.of(context)
             .textTheme
-            .bodyText2
+            .bodyMedium!
             .copyWith(color: Color.fromRGBO(80, 125, 247, 1)),
       ),
       iconTheme: IconThemeData(color: Colors.black),
@@ -55,21 +54,24 @@ ThemeData customLightTheme(
       textTheme: Typography.material2018(platform: defaultTargetPlatform)
           .white
           .copyWith(
-            bodyText1: TextStyle(color: Colors.black, fontSize: 16),
-            bodyText2: TextStyle(color: Colors.black, fontSize: 14),
-            caption: TextStyle(color: Colors.black, fontSize: 12),
-            headline1: TextStyle(color: Colors.black, fontSize: 96),
-            headline2: TextStyle(color: Colors.black, fontSize: 60),
-            headline3: TextStyle(color: Colors.black, fontSize: 48),
-            headline4: TextStyle(color: Colors.black, fontSize: 34),
-            headline5: TextStyle(color: Colors.black, fontSize: 24),
-            headline6: TextStyle(color: Colors.black, fontSize: 20),
-            subtitle1: TextStyle(color: Colors.black, fontSize: 16),
-            subtitle2: TextStyle(color: Colors.black, fontSize: 14),
-            overline: TextStyle(color: Colors.black, fontSize: 10),
-            button: TextStyle(color: Colors.black, fontSize: 16),
+            bodyLarge: TextStyle(color: Colors.black, fontSize: 16),
+            bodyMedium: TextStyle(color: Colors.black, fontSize: 14),
+            bodySmall: TextStyle(color: Colors.black, fontSize: 12),
+            displayLarge: TextStyle(color: Colors.black, fontSize: 96),
+            displayMedium: TextStyle(color: Colors.black, fontSize: 60),
+            displaySmall: TextStyle(color: Colors.black, fontSize: 48),
+            headlineMedium: TextStyle(color: Colors.black, fontSize: 34),
+            headlineSmall: TextStyle(color: Colors.black, fontSize: 24),
+            titleLarge: TextStyle(color: Colors.black, fontSize: 20),
+            titleMedium: TextStyle(color: Colors.black, fontSize: 16),
+            titleSmall: TextStyle(color: Colors.black, fontSize: 14),
+            labelSmall: TextStyle(color: Colors.black, fontSize: 10),
+            labelLarge: TextStyle(color: Colors.black, fontSize: 16),
           ),
-      dividerColor: Colors.grey);
+      dividerColor: Colors.grey,
+      textSelectionTheme:
+          TextSelectionThemeData(cursorColor: Color.fromRGBO(80, 125, 247, 1)),
+      colorScheme: ColorScheme.fromSwatch(primarySwatch: Color.fromRGBO(80, 125, 247, 1).toMaterial));
 }
 
 ///dark theme
@@ -79,8 +81,6 @@ ThemeData customDarkTheme(
   return ThemeData(
       scaffoldBackgroundColor: Colors.black,
       visualDensity: VisualDensity.adaptivePlatformDensity,
-      cursorColor: Color.fromRGBO(80, 125, 247, 1),
-      errorColor: Color(0xFFCF6679),
       primaryColor: Colors.black,
       floatingActionButtonTheme: FloatingActionButtonThemeData(
           backgroundColor: Color.fromRGBO(31, 31, 31, 1)),
@@ -95,19 +95,19 @@ ThemeData customDarkTheme(
       textTheme: Typography.material2018(platform: defaultTargetPlatform)
           .white
           .copyWith(
-            bodyText1: TextStyle(color: Colors.white, fontSize: 16),
-            bodyText2: TextStyle(color: Colors.white, fontSize: 14),
-            caption: TextStyle(color: Colors.white, fontSize: 12),
-            headline1: TextStyle(color: Colors.white, fontSize: 96),
-            headline2: TextStyle(color: Colors.white, fontSize: 60),
-            headline3: TextStyle(color: Colors.white, fontSize: 48),
-            headline4: TextStyle(color: Colors.white, fontSize: 34),
-            headline5: TextStyle(color: Colors.white, fontSize: 24),
-            headline6: TextStyle(color: Colors.white, fontSize: 20),
-            subtitle1: TextStyle(color: Colors.white, fontSize: 16),
-            subtitle2: TextStyle(color: Colors.white, fontSize: 14),
-            overline: TextStyle(color: Colors.white, fontSize: 10),
-            button: TextStyle(color: Colors.white, fontSize: 16),
+            bodyLarge: TextStyle(color: Colors.white, fontSize: 16),
+            bodyMedium: TextStyle(color: Colors.white, fontSize: 14),
+            bodySmall: TextStyle(color: Colors.white, fontSize: 12),
+            displayLarge: TextStyle(color: Colors.white, fontSize: 96),
+            displayMedium: TextStyle(color: Colors.white, fontSize: 60),
+            displaySmall: TextStyle(color: Colors.white, fontSize: 48),
+            headlineMedium: TextStyle(color: Colors.white, fontSize: 34),
+            headlineSmall: TextStyle(color: Colors.white, fontSize: 24),
+            titleLarge: TextStyle(color: Colors.white, fontSize: 20),
+            titleMedium: TextStyle(color: Colors.white, fontSize: 16),
+            titleSmall: TextStyle(color: Colors.white, fontSize: 14),
+            labelSmall: TextStyle(color: Colors.white, fontSize: 10),
+            labelLarge: TextStyle(color: Colors.white, fontSize: 16),
           ),
       iconTheme: IconThemeData(color: Colors.white),
       dividerColor: Colors.white.withOpacity(.6),
@@ -115,7 +115,7 @@ ThemeData customDarkTheme(
         fillColor: Color.fromRGBO(31, 31, 31, 1),
         filled: true,
         alignLabelWithHint: true,
-        hintStyle: Theme.of(context).textTheme.bodyText1,
+        hintStyle: Theme.of(context).textTheme.bodyLarge,
         contentPadding: EdgeInsets.all(15.0),
         floatingLabelBehavior: FloatingLabelBehavior.auto,
         focusedBorder: OutlineInputBorder(
@@ -133,11 +133,16 @@ ThemeData customDarkTheme(
         focusedErrorBorder: OutlineInputBorder(
             borderSide: BorderSide(color: Color(0xFFCF6679)),
             borderRadius: BorderRadius.all(Radius.circular(10))),
-        labelStyle:
-            Theme.of(context).textTheme.bodyText2.copyWith(color: Colors.white),
+        labelStyle: Theme.of(context)
+            .textTheme
+            .bodyMedium!
+            .copyWith(color: Colors.white),
         errorStyle: Theme.of(context)
             .textTheme
-            .bodyText2
+            .bodyMedium!
             .copyWith(color: Color(0xFFCF6679)),
-      ));
+      ),
+      textSelectionTheme:
+          TextSelectionThemeData(cursorColor: Color.fromRGBO(80, 125, 247, 1)),
+      colorScheme: ColorScheme.fromSwatch(errorColor: Color(0xFFCF6679),brightness: Brightness.dark));
 }

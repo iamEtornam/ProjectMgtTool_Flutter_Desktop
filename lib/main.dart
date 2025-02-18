@@ -2,16 +2,27 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:projectmgtapp/custom_theme.dart';
-import 'package:window_size/window_size.dart';
+import 'package:window_manager/window_manager.dart';
 
 import 'pages/home_page.dart';
 
-void main() {
+void main()async {
   WidgetsFlutterBinding.ensureInitialized();
   if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
-    setWindowTitle('App title');
-    setWindowMinSize(const Size(700, 500));
-    setWindowMaxSize(Size.infinite);
+     await windowManager.ensureInitialized();
+     windowManager.setTitle('Project Management');
+    WindowOptions windowOptions = const WindowOptions(
+      size: Size(1800, 900),
+      minimumSize: Size(1000, 900),
+      center: true,
+      backgroundColor: Colors.transparent,
+      skipTaskbar: false,
+      titleBarStyle: TitleBarStyle.normal,
+    );	
+    windowManager.waitUntilReadyToShow(windowOptions, () async {
+      await windowManager.show();
+      await windowManager.focus();
+    });
   }
   runApp(MyApp());
 }

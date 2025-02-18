@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
+import 'package:unicons/unicons.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -10,7 +10,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool isOnline = true;
-  onClick({String label}) {
+  onClick({required String label}) {
     if (label == 'Dashboard') {}
   }
 
@@ -40,14 +40,14 @@ class _HomePageState extends State<HomePage> {
                     'Etornam Sunu',
                     style: Theme.of(context)
                         .textTheme
-                        .subtitle1
+                        .titleMedium!
                         .copyWith(fontWeight: FontWeight.bold),
                   ),
                   subtitle: Text(
                     'Software Engineer',
                     style: Theme.of(context)
                         .textTheme
-                        .subtitle2
+                        .titleSmall!
                         .copyWith(color: Colors.grey),
                   ),
                 ),
@@ -55,19 +55,19 @@ class _HomePageState extends State<HomePage> {
                 MenuOptionsWidget(
                   voidCallback: () {},
                   isSelected: false,
-                  icon: MaterialCommunityIcons.view_dashboard_outline,
+                  icon: UniconsLine.dashboard,
                   label: 'Dashboard',
                 ),
                 MenuOptionsWidget(
                   voidCallback: () {},
                   isSelected: false,
-                  icon: AntDesign.folder1,
+                  icon: UniconsLine.folder,
                   label: 'Projects',
                 ),
                 MenuOptionsWidget(
                   voidCallback: () {},
                   isSelected: false,
-                  icon: AntDesign.calendar,
+                  icon: UniconsLine.calender,
                   label: 'Calendar',
                 ),
                 MenuOptionsWidget(
@@ -79,25 +79,28 @@ class _HomePageState extends State<HomePage> {
                 MenuOptionsWidget(
                   voidCallback: () {},
                   isSelected: false,
-                  icon: Octicons.tasklist,
+                  icon: UniconsLine.assistive_listening_systems,
                   label: 'Tasks',
                 ),
                 MenuOptionsWidget(
                   voidCallback: () {},
                   isSelected: false,
-                  icon: Octicons.settings,
+                  icon: UniconsLine.setting,
                   label: 'Settings',
                 ),
                 Spacer(),
-                FlatButton(
+                TextButton(
                     onPressed: () {},
-                    shape: RoundedRectangleBorder(
+                    style: TextButton.styleFrom(
+   shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10)),
-                    color: Color.fromRGBO(80, 125, 247, 1),
+                    backgroundColor: Color.fromRGBO(80, 125, 247, 1),
                     padding: EdgeInsets.fromLTRB(50, 24, 50, 24),
+                    ),
+                 
                     child: Text(
                       'Add Event',
-                      style: Theme.of(context).textTheme.bodyText2.copyWith(
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                           fontWeight: FontWeight.w600, color: Colors.white),
                     )),
                 SizedBox(height: 30)
@@ -124,7 +127,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Expanded(
                       child: TextField(
-                        style: Theme.of(context).textTheme.bodyText1,
+                        style: Theme.of(context).textTheme.bodyLarge,
                         textInputAction: TextInputAction.send,
                         keyboardType: TextInputType.text,
                         maxLines: 1,
@@ -162,11 +165,11 @@ class _HomePageState extends State<HomePage> {
                             filled: true,
                             labelStyle: Theme.of(context)
                                 .inputDecorationTheme
-                                .labelStyle
+                                .labelStyle!
                                 .copyWith(color: Colors.grey),
                             errorStyle: Theme.of(context)
                                 .textTheme
-                                .bodyText2
+                                .bodyMedium!
                                 .copyWith(color: Colors.red),
                             prefixIcon: Icon(
                               Icons.search,
@@ -189,7 +192,7 @@ class _HomePageState extends State<HomePage> {
                           'Project\'s name',
                           style: Theme.of(context)
                               .textTheme
-                              .subtitle2
+                              .titleSmall!
                               .copyWith(color: Colors.grey),
                         ),
                         SizedBox(
@@ -199,7 +202,7 @@ class _HomePageState extends State<HomePage> {
                           'App Concept',
                           style: Theme.of(context)
                               .textTheme
-                              .headline4
+                              .headlineMedium!
                               .copyWith(fontWeight: FontWeight.bold),
                         )
                       ],
@@ -211,7 +214,7 @@ class _HomePageState extends State<HomePage> {
                           'Members',
                           style: Theme.of(context)
                               .textTheme
-                              .subtitle2
+                              .titleSmall!
                               .copyWith(color: Colors.grey),
                         ),
                         SizedBox(
@@ -290,7 +293,7 @@ class _HomePageState extends State<HomePage> {
                               '+12',
                               style: Theme.of(context)
                                   .textTheme
-                                  .bodyText1
+                                  .bodyLarge!
                                   .copyWith(
                                       fontWeight: FontWeight.w600,
                                       color: Colors.grey),
@@ -326,7 +329,7 @@ class _HomePageState extends State<HomePage> {
                       'Recent Files',
                       style: Theme.of(context)
                           .textTheme
-                          .bodyText1
+                          .bodyLarge!
                           .copyWith(fontWeight: FontWeight.bold),
                     ),
                     SizedBox(
@@ -334,7 +337,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Text(
                       'Events',
-                      style: Theme.of(context).textTheme.bodyText1.copyWith(
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           fontWeight: FontWeight.bold, color: Colors.grey),
                     ),
                     SizedBox(
@@ -342,7 +345,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                     Text(
                       'Tasks',
-                      style: Theme.of(context).textTheme.bodyText1.copyWith(
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                           fontWeight: FontWeight.bold, color: Colors.grey),
                     )
                   ],
@@ -405,7 +408,7 @@ class _HomePageState extends State<HomePage> {
                                               'image.jpg',
                                               style: Theme.of(context)
                                                   .textTheme
-                                                  .subtitle1
+                                                  .titleMedium!
                                                   .copyWith(
                                                       fontWeight:
                                                           FontWeight.w600,
@@ -416,7 +419,7 @@ class _HomePageState extends State<HomePage> {
                                               'Jake Peterson . 4MB',
                                               style: Theme.of(context)
                                                   .textTheme
-                                                  .subtitle2
+                                                  .titleSmall!
                                                   .copyWith(
                                                       fontWeight:
                                                           FontWeight.w600,
@@ -430,7 +433,7 @@ class _HomePageState extends State<HomePage> {
                                           child: Padding(
                                             padding: EdgeInsets.all(10),
                                             child: Icon(
-                                              AntDesign.download,
+                                              UniconsLine.download_alt,
                                               color: Colors.white,
                                             ),
                                           ),
@@ -495,7 +498,7 @@ class _HomePageState extends State<HomePage> {
                                               'image.jpg',
                                               style: Theme.of(context)
                                                   .textTheme
-                                                  .subtitle1
+                                                  .titleMedium!
                                                   .copyWith(
                                                       fontWeight:
                                                           FontWeight.w600,
@@ -506,7 +509,7 @@ class _HomePageState extends State<HomePage> {
                                               'Jake Peterson . 4MB',
                                               style: Theme.of(context)
                                                   .textTheme
-                                                  .subtitle2
+                                                  .titleSmall!
                                                   .copyWith(
                                                       fontWeight:
                                                           FontWeight.w600,
@@ -520,7 +523,7 @@ class _HomePageState extends State<HomePage> {
                                           child: Padding(
                                             padding: EdgeInsets.all(10),
                                             child: Icon(
-                                              AntDesign.download,
+                                              UniconsLine.download_alt,
                                               color: Colors.white,
                                             ),
                                           ),
@@ -582,7 +585,7 @@ class _HomePageState extends State<HomePage> {
                                           'image.jpg',
                                           style: Theme.of(context)
                                               .textTheme
-                                              .subtitle1
+                                              .titleMedium!
                                               .copyWith(
                                                   fontWeight: FontWeight.w600,
                                                   color: Colors.white),
@@ -592,7 +595,7 @@ class _HomePageState extends State<HomePage> {
                                           'Jake Peterson . 4MB',
                                           style: Theme.of(context)
                                               .textTheme
-                                              .subtitle2
+                                              .titleSmall!
                                               .copyWith(
                                                   fontWeight: FontWeight.w600,
                                                   color: Colors.grey),
@@ -605,7 +608,7 @@ class _HomePageState extends State<HomePage> {
                                       child: Padding(
                                         padding: EdgeInsets.all(10),
                                         child: Icon(
-                                          AntDesign.download,
+                                          UniconsLine.download_alt,
                                           color: Colors.white,
                                         ),
                                       ),
@@ -640,7 +643,7 @@ class _HomePageState extends State<HomePage> {
                       'Conversation',
                       style: Theme.of(context)
                           .textTheme
-                          .headline6
+                          .titleLarge!
                           .copyWith(fontWeight: FontWeight.bold),
                     ),
                     Material(
@@ -648,7 +651,7 @@ class _HomePageState extends State<HomePage> {
                       elevation: 3,
                       child: Padding(
                         padding: EdgeInsets.all(15),
-                        child: Icon(Octicons.settings),
+                        child: Icon(UniconsLine.setting),
                       ),
                     )
                   ],
@@ -668,13 +671,13 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Text(
                       'Today',
-                      style: Theme.of(context).textTheme.subtitle2,
+                      style: Theme.of(context).textTheme.titleSmall,
                     ),
                     Text(
                       '22 June 2020',
                       style: Theme.of(context)
                           .textTheme
-                          .subtitle2
+                          .titleSmall!
                           .copyWith(color: Colors.grey),
                     )
                   ],
@@ -708,7 +711,7 @@ class _HomePageState extends State<HomePage> {
                   children: [
                     Expanded(
                       child: TextField(
-                        style: Theme.of(context).textTheme.bodyText1,
+                        style: Theme.of(context).textTheme.bodyLarge,
                         textInputAction: TextInputAction.send,
                         keyboardType: TextInputType.text,
                         maxLines: 1,
@@ -742,11 +745,11 @@ class _HomePageState extends State<HomePage> {
                             filled: true,
                             labelStyle: Theme.of(context)
                                 .inputDecorationTheme
-                                .labelStyle
+                                .labelStyle!
                                 .copyWith(color: Colors.grey),
                             errorStyle: Theme.of(context)
                                 .textTheme
-                                .bodyText2
+                                .bodyMedium!
                                 .copyWith(color: Colors.red)),
                       ),
                     ),
@@ -787,11 +790,11 @@ class ChatProfileWidget extends StatelessWidget {
   final bool isOnline;
 
   const ChatProfileWidget({
-    Key key,
-    @required this.name,
-    @required this.timestamp,
-    @required this.avatarUrl,
-    @required this.message,
+    Key? key,
+    required this.name,
+    required this.timestamp,
+    required this.avatarUrl,
+    required this.message,
     this.isMe = false,
     this.isOnline = false,
   }) : super(key: key);
@@ -837,7 +840,7 @@ class ChatProfileWidget extends StatelessWidget {
                 name,
                 style: Theme.of(context)
                     .textTheme
-                    .subtitle1
+                    .titleMedium!
                     .copyWith(fontWeight: FontWeight.bold),
               ),
               subtitle: Column(
@@ -847,7 +850,7 @@ class ChatProfileWidget extends StatelessWidget {
                     'at $timestamp',
                     style: Theme.of(context)
                         .textTheme
-                        .subtitle2
+                        .titleSmall!
                         .copyWith(color: Colors.grey),
                   ),
                 ],
@@ -871,9 +874,12 @@ class ChatProfileWidget extends StatelessWidget {
                           maxLines: 5,
                           overflow: TextOverflow.ellipsis,
                           softWrap: true,
-                          style: Theme.of(context).textTheme.subtitle2.copyWith(
-                              color: isMe ? Colors.white : Colors.grey,
-                              fontWeight: FontWeight.normal),
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleSmall!
+                              .copyWith(
+                                  color: isMe ? Colors.white : Colors.grey,
+                                  fontWeight: FontWeight.normal),
                         ),
                       )),
                 ),
@@ -889,14 +895,14 @@ class ChatProfileWidget extends StatelessWidget {
 class MenuOptionsWidget extends StatefulWidget {
   final IconData icon;
   final String label;
-  final Function voidCallback;
+  final VoidCallback voidCallback;
   final bool isSelected;
 
   const MenuOptionsWidget(
-      {Key key,
-      @required this.icon,
-      @required this.label,
-      @required this.voidCallback,
+      {Key? key,
+      required this.icon,
+      required this.label,
+      required this.voidCallback,
       this.isSelected = false})
       : super(key: key);
   @override
@@ -918,7 +924,7 @@ class _MenuOptionsWidgetState extends State<MenuOptionsWidget> {
           ),
           title: Text(
             widget.label,
-            style: Theme.of(context).textTheme.bodyText2.copyWith(
+            style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                 color: widget.isSelected
                     ? Color.fromRGBO(80, 125, 247, 1)
                     : Color.fromRGBO(137, 137, 137, 1)),
